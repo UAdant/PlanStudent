@@ -17,7 +17,7 @@ public interface mainDAO {
 
     @Query("SELECT * FROM notes ORDER BY id DESC ")
     List<Notes> getAll();
-
+// попитка 3
     @Query("UPDATE notes SET title =:title, notes =:notes WHERE ID =:id")
     void update (int id, String title, String notes);
 
