@@ -9,24 +9,37 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myapplication.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button opCal, showPanelButton, showPanelButtonNotion;
     private LinearLayout panelLayout, panelLayoutNotion;
+    private ActivityMainBinding binding;
 
     Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         opCal = findViewById(R.id.openCalendar);
-        showPanelButton = findViewById(R.id.addEvent);
+        showPanelButton = findViewById(R.id.open_bs_btn);
         panelLayout = findViewById(R.id.panelLayout);
-
         showPanelButtonNotion = findViewById(R.id.openNotion);
         panelLayoutNotion = findViewById(R.id.panelLayoutNotion);
+
+        binding.openBsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MyBottomSheet myBottomsheet = new MyBottomSheet();
+                myBottomsheet.show(getSupportFragmentManager(),"my bottom sheet dialog");
+            }
+        });
 
         opCal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,12 +49,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        showPanelButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                panelLayout.setVisibility(View.VISIBLE);
-            }
-        });
+//        showPanelButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                panelLayout.setVisibility(View.VISIBLE);
+//            }
+//        });
 
 
         showPanelButtonNotion.setOnClickListener(new View.OnClickListener() {
