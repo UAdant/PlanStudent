@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
+import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button opCal, showPanelButton, showPanelButtonNotion;
     private LinearLayout panelLayout, panelLayoutNotion;
+
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,5 +50,8 @@ public class MainActivity extends AppCompatActivity {
                 panelLayoutNotion.setVisibility(View.VISIBLE);
             }
         });
+
+
+
     }
 }

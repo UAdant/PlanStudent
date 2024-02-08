@@ -19,11 +19,7 @@
         android:background="@color/black">
 
         <!-- Здесь може бути ваш вміст панелі -->
-        <Button
-            android:id="@+id/addEventE"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+" />
+
 
     </LinearLayout>
 
