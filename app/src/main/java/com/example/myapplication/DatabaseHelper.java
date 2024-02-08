@@ -55,11 +55,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertScheduleData(String subject, String type, String date, String time) {
+    public boolean insertScheduleData(String subject, String date, String time) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_SUBJECT, subject);
-        contentValues.put(COLUMN_TYPE, type);
         contentValues.put(COLUMN_DATE, date);
         contentValues.put(COLUMN_TIME, time);
         long result = db.insert(TABLE_SCHEDULE, null, contentValues);
